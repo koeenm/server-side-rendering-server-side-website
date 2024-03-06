@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --mainfont: oratorw01;
+    --titelfont: helveticaw01;
+    --headercolour: #F6F1EB;
+    --foregroundcolour: #F4EFE9;
+    --backgroundcolour: #444444;
+
+}
+
+@font-face {
+    font-family: oratorw01;
+    src: url(fonts/Orator\ W01\ Medium.ttf);
+}
+
+@font-face {
+    font-family: helveticaw01;
+    src: url(fonts/Helvetica\ W01\ Cn.ttf);
+}
+
+body {
+    font-family: var(--mainfont);
+    background-color: var(--foregroundcolour);
+}
+
+a {
+    all: unset
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    background-color: var(--headercolour);
+    margin: 0;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+
+    h1 {
+        color: var(--backgroundcolour);
+        text-transform: uppercase;
+        font-family: var(--titelfont);
+        font-size: 1.5em;
+    }
+    
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.35em;
+
+        position: absolute;
+        left: 1em;
+
+        div {
+            background-color: var(--backgroundcolour);
+            width: 1.5em;
+            height: 0.1em;
+            border-radius: 1.5em;
+        }
+
+        p {
+            font-family: var(--mainfont);
+            font-size: 0.75em;
+        }
+    }
+}
+
+.menu {
+    transform: translateX(-100%);
+    transition: 300ms ease;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding-top: 1em;
+
+    position: fixed;
+    z-index: 10;
+
+    background-color: white;
+
+    height: 100vh;
+    width: 100vw;
+
+    a {
+        text-decoration: none;
+        color: black;
+        font-family: var(--mainfont);
+        font-size: 1.25em;
+    }
+}
+
+.show-hamburger-menu {
+    transform: translateX(0);
+}
+
+.initiatief {
+    padding: 1em;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    width: 100vw
+
+    article {
+        width: 100vw;
+    }
+
+    img {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 20em;
+        object-fit: cover;
+    }
+}
+
+.contact {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+
+    background-color: var(--headercolour);
+
+    img {
+        width: 5em;
+        height: 5em;
+        object-fit: cover;
+        border-radius: 5em;
+    }
+    
+    article {
+        display: flex;
+        flex-direction: column;
+
+        span {
+            font-size: 0.85em;
+        }
+    }
+}
+
+.related-content {
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        padding: 1em;
+
+        overflow-x: scroll;
+
+        li {
+            min-width: 33vw;
+
+            img {
+                width: 30vw;
+                height: 7.5em;
+                object-fit: cover;
+            }
+
+            p {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.left-header,
+.right-header {
+    display: none;
+}
+
+.over-initiatief-tekst {
+    padding-top: 1em;
+    font-family: var(--titelfont);
+}
+
+@media (min-width: 770px) {
+    .hamburger {
+        display: none;
+        visibility: hidden;
+    }
+
+    header {
+        justify-content: space-between;
+    }
+
+    .left-header,
+    .right-header {
+        display: flex;
+        gap: 1em;
+
+        padding: 0;
+
+        font-family: var(--titelfont);
+    }
+
+    .initiatief {
+        height: 40em;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        img {
+            height: 100%;
+            width: 45vw;
+            object-fit: contain;
+        }
+    }
+
+    .over-initiatief-tekst {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+
+        width: 30em;
+        line-height: 1.4;
+        letter-spacing: 0.1em;
+
+        font-family: var(--titelfont);
+
+        span {
+            font-weight: bolder;
+        }
+    }
+
+    .contact {
+        img {
+            height: 10em;
+            width: 10em;
+        }
+
+        p {
+            font-size: 1.5em;
+            padding-left: 1em;
+        }
+    }
+
+    .related-content {
+
+        ul {
+            gap: 5em;
+
+            li {
+                min-width: 40vw;
+
+                img {
+                    width: 40vw;
+                    height: 60vh;
+                }
+            }
+        }
+    }
+}
+

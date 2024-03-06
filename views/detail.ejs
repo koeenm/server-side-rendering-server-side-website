@@ -1,0 +1,61 @@
+<%- include('./partials/head.ejs') -%>
+
+<%- include('./partials/nav.ejs') -%>
+
+<section class="initiatief">
+    <article>
+        <% console.log(initiatief) %>
+        <h2> <%= initiatief.title %></h2>
+        <p>Startdatum: <%= initiatief.start_date %></p>
+        <p>Einddatum: <%= initiatief.end_date %></p>
+        <p>Buurt: <%= initiatief.neighbourhood %></p>
+        <% if (initiatief.time) { %>
+            <p>Tijd: <%= initiatief.time %></p>
+        <% } %>
+
+        <!-- hij pakt de class .over-initiatief-tekst niet, -->
+        <p class="over-initiatief-tekst"> <%= initiatief.long_description %> </p>
+
+    </article>
+        <% if (initiatief.image) { %>
+            <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>"            
+            alt="<%- initiatief.short_description %>">
+        <% } %>
+
+</section>
+
+<section class="contact">
+        <img src="images/profilepicture.webp" alt="profilepicture">
+    <article>
+        <p>Naam: <span> kiwitaart </span></p>
+        <p>E-mail: <span> kiwitaart@gmail.com </span></p>
+    </article>
+</section>
+
+<section class="related-content">
+    <ul>
+        <li><a href="/"><%= initiatief.title %></a>
+            <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
+            <p>Meer informatie</p>
+        </li>
+        <li><a href="/"><%= initiatief.title %></a>
+            <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
+            <p>Meer informatie</p>
+        </li>
+        <li><a href="/"><%= initiatief.title %></a>
+            <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
+            <p>Meer informatie</p>
+        </li>
+        <li><a href="/"><%= initiatief.title %></a>
+            <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
+            <p>Meer informatie</p>
+        </li>
+        <li><a href="/"><%= initiatief.title %></a>
+            <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
+            <p>Meer informatie</p>
+        </li>
+    </ul>
+</section>
+</main>
+
+<%- include('./partials/foot.ejs') -%>

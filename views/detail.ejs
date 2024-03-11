@@ -4,8 +4,7 @@
 
 <section class="initiatief">
     <article>
-        <% console.log(initiatief) %>
-        <h2> <%= initiatief.title %></h2>
+        <h4> <%= initiatief.title %></h4>
         <p>Startdatum: <%= initiatief.start_date %></p>
         <p>Einddatum: <%= initiatief.end_date %></p>
         <p>Buurt: <%= initiatief.neighbourhood %></p>
@@ -13,13 +12,14 @@
             <p>Tijd: <%= initiatief.time %></p>
         <% } %>
 
-        <!-- hij pakt de class .over-initiatief-tekst niet, -->
-        <p class="over-initiatief-tekst"> <%= initiatief.long_description %> </p>
+        <!-- hij pakt de class .over-initiatief-tekst niet, met een divje werkt het wel geen p'tje !!!! -->
+        <div class="over-initiatief-tekst"> <%- initiatief.long_description %> </div>
 
     </article>
         <% if (initiatief.image) { %>
-            <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>"            
-            alt="<%- initiatief.short_description %>">
+            <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>"
+
+            alt="<%- initiatief.title %>">
         <% } %>
 
 </section>
@@ -32,28 +32,33 @@
     </article>
 </section>
 
+<!-- hier gaat een forEach loop moeten komen (denk ik) -->
 <section class="related-content">
     <ul>
-        <li><a href="/"><%= initiatief.title %></a>
+        <a href="/"><li><%= initiatief.title %>
             <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
             <p>Meer informatie</p>
-        </li>
-        <li><a href="/"><%= initiatief.title %></a>
+        </li></a>
+
+        <a href="/"><li><%= initiatief.title %>
             <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
             <p>Meer informatie</p>
-        </li>
-        <li><a href="/"><%= initiatief.title %></a>
+        </li></a>
+
+        <a href="/"><li><%= initiatief.title %>
             <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
             <p>Meer informatie</p>
-        </li>
-        <li><a href="/"><%= initiatief.title %></a>
+        </li></a>
+
+        <a href="/"><li><%= initiatief.title %>
             <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
             <p>Meer informatie</p>
-        </li>
-        <li><a href="/"><%= initiatief.title %></a>
+        </li></a>
+
+        <a href="/"><li><%= initiatief.title %>
             <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
             <p>Meer informatie</p>
-        </li>
+        </li></a>
     </ul>
 </section>
 

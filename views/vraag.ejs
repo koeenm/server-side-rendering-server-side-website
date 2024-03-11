@@ -1,0 +1,28 @@
+<%- include('./partials/head.ejs') -%>
+
+<%- include('./partials/nav.ejs') -%>
+
+<h3>Overzichtspagina van dingen waar vraag naar is</h3>
+
+<section class="initiatief-algemeen">
+    <ul class="card-list">
+        <% initiatiefVraag.forEach(vraag => {
+            { %>
+            <li>
+                <a class="card" href="/detail/<%=vraag.id%>">
+               <h4> <%=vraag.title%> </h4>
+               <% if (vraag.image) { %>
+                <img src="https://fdnd-agency.directus.app/assets/<%= vraag.image %>"
+    
+                alt="<%- vraag.title %>">
+                <!-- onerror; https://github.com/users/SamaraFellaDina/projects/7/views/2?pane=issue&itemId=53408192 -->
+            <% } %>     
+                </a>           
+            </li>
+        <% }
+        }) %>
+    </ul>
+
+</section>
+
+<%- include('./partials/foot.ejs') -%>

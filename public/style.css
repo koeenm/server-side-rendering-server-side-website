@@ -50,9 +50,16 @@ ul {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    transform: 
+    translateX(1em)
+    translateY(1em);
 
     h2 {
         font-size: 4em;
+        max-width: 80vw;
+    }
+
+    p {
         max-width: 80vw;
     }
 }

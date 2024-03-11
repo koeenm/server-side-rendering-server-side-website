@@ -155,7 +155,9 @@ header {
     gap: 1em;
     flex-direction: column;
     width: 100vw;
+
     height: fit-content;
+    overflow-x: hidden;
 
     article {
         width: 100vw;
@@ -184,7 +186,9 @@ header {
     flex-direction: row;
     align-items: center;
     gap: 0.5em;
+
     width: 100vw;
+    overflow-x: hidden;
 
     background-color: var(--headercolour);
 
@@ -200,7 +204,9 @@ header {
     article {
         display: flex;
         flex-direction: column;
+
         width: 100vw;
+        overflow-x: hidden;
 
         span {
             font-size: 0.85em;

@@ -44,10 +44,13 @@ ul {
     list-style: none;
 }
 
-h2 {
-    font-size: 4em;
-    padding: 1em;
-    max-width: 80vw;
+section.homepage {
+    padding: 4em;
+
+    h2 {
+        font-size: 4em;
+        max-width: 80vw;
+    }
 }
 
 @media (max-width: 500px) {
@@ -126,12 +129,6 @@ header {
     }
 }
 
-.slogan {
-    font-size: 2.5em;
-    display: flex;
-    padding: 2em;
-}
-
 .show-hamburger-menu {
     transform: translateX(0);
 }
@@ -142,9 +139,14 @@ header {
     gap: 1em;
     flex-direction: column;
     width: 100vw;
+    height: fit-content;
 
     article {
         width: 100vw;
+
+        h4 {
+            font-size: 2em;
+        }
     }
 
     img {
@@ -154,35 +156,11 @@ header {
         height: 20em;
         object-fit: cover;
     }
+
+    p {
+        height: fit-content;
+    }
 }
-
-/* .initiatief-algemeen {
-    width: 25em;
-    height: 25em;
-
-    background-color: white;
-
-    display: flex;
-
-    article {
-        width: 10em;
-    }
-
-    h3 {
-        padding: 0;
-    }
-
-    img {
-        padding: 0.5em;
-        width: 15em;
-        height: 50%;
-        object-fit: cover;
-    }
-
-    .over-initiatief-tekst {
-        padding-top: 7.5em;
-    }
-} */
 
 .contact {
     padding: 1em;
@@ -198,6 +176,8 @@ header {
         height: 5em;
         object-fit: cover;
         border-radius: 5em;
+        background-color: var(--backgroundcolour);
+        text-indent: -100em;
     }
     
     article {
@@ -252,6 +232,7 @@ header {
 }
 
 h3 {
+    font-size: 2em;
     padding: 1em;
 }
 
@@ -269,11 +250,12 @@ li.card {
     width: 90vw;
     background-color: whitesmoke;
 
-    h {
+    h4 {
         height: 4em;
 
         display: flex;
         align-items: center;
+        justify-content: center;
     }
 
     img {
@@ -285,6 +267,12 @@ li.card {
     a {
         margin: 0;
     }
+}
+
+ul.card-carousel {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
 }
 
 @media (min-width: 770px) {
@@ -308,7 +296,7 @@ li.card {
     }
 
     .initiatief {
-        height: 40em;
+        height: fit-content;
 
         display: flex;
         flex-direction: row;
@@ -375,14 +363,19 @@ li.card {
 
     li.card {
         width: 30vw;
+        height: 100%;
 
         h4 {
-            height: auto;
+            height: 4em;
         }
 
         img {
             width: 30vw;
             height: 10em;
+        }
+
+        a {
+            height: 100%;
         }
     }
 }
@@ -390,10 +383,6 @@ li.card {
 @media (min-width: 960px) {
     li.card {
         width: 30vw;
-
-        h4 {
-            height: auto;
-        }
 
         img {
             width: 30vw;

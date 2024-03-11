@@ -5,9 +5,18 @@
 <section class="initiatief">
     <article>
         <h4> <%= initiatief.title %></h4>
-        <p>Startdatum: <%= initiatief.start_date %></p>
-        <p>Einddatum: <%= initiatief.end_date %></p>
-        <p>Buurt: <%= initiatief.neighbourhood %></p>
+        <% if (initiatief.start_date) { %>
+            <p>Startdatum: <%= initiatief.start_date %></p>
+        <% }   %>
+
+        <% if (initiatief.end_date) { %>
+            <p>Einddatum: <%= initiatief.end_date %></p>
+        <% } %>
+        
+        <% if (initiatief.neighbourhood) { %>
+            <p>Buurt: <%= initiatief.neighbourhood %></p>
+        <% } %>
+
         <% if (initiatief.time) { %>
             <p>Tijd: <%= initiatief.time %></p>
         <% } %>

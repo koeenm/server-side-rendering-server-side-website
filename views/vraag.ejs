@@ -2,14 +2,14 @@
 
 <%- include('./partials/nav.ejs') -%>
 
-<h3>Overzichtspagina van dingen waar vraag naar is</h3>
+<h3>Vragen overzicht</h3>
 
 <section class="initiatief-algemeen">
     <ul class="card-list">
         <% initiatiefVraag.forEach(vraag => {
             { %>
-            <li>
-                <a class="card" href="/detail/<%=vraag.id%>">
+            <li class="card">
+                <a href="/detail/<%=vraag.id%>">
                <h4> <%=vraag.title%> </h4>
                <% if (vraag.image) { %>
                 <img src="https://fdnd-agency.directus.app/assets/<%= vraag.image %>"

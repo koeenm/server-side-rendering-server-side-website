@@ -177,6 +177,7 @@ header {
     flex-direction: row;
     align-items: center;
     gap: 0.5em;
+    width: 100vw;
 
     background-color: var(--headercolour);
 
@@ -192,6 +193,7 @@ header {
     article {
         display: flex;
         flex-direction: column;
+        width: 100vw;
 
         span {
             font-size: 0.85em;

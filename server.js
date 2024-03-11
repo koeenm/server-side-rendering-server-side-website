@@ -56,6 +56,15 @@ app.get('/vraag', function (request, response) {
     })
   })
 
+app.get('/aanbod', function (request, response) {
+  fetchJson(apiUrl).then((apiData) => {
+    response.render('aanbod', {
+      initiatiefAanbod: apiData.data
+    })
+    console.log(apiData)
+  })
+})
+
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000)
 

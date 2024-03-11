@@ -2,19 +2,19 @@
 
 <%- include('./partials/nav.ejs') -%>
 
-<h3>Vragen overzicht</h3>
+<h3>Aanbod overzicht</h3>
 
 <section class="initiatief-algemeen">
     <ul class="card-list">
-        <% initiatiefVraag.forEach(vraag => {
+        <% initiatiefAanbod.forEach(aanbod => {
             { %>
             <li class="card">
-                <a href="/detail/<%=vraag.id%>">
-               <h4> <%=vraag.title%> </h4>
-               <% if (vraag.image) { %>
-                <img src="https://fdnd-agency.directus.app/assets/<%= vraag.image %>"
+                <a href="/detail/<%=aanbod.id%>">
+               <h4> <%=aanbod.title%> </h4>
+               <% if (aanbod.image) { %>
+                <img src="https://fdnd-agency.directus.app/assets/<%= aanbod.image %>"
     
-                alt="<%- vraag.title %>">
+                alt="<%- aanbod.title %>">
                 <!-- onerror; https://github.com/users/SamaraFellaDina/projects/7/views/2?pane=issue&itemId=53408192 -->
             <% } %>     
                 </a>           
@@ -23,5 +23,6 @@
         }) %>
     </ul>
 </section>
+
 
 <%- include('./partials/foot.ejs') -%>

@@ -25,6 +25,8 @@
 body {
     font-family: var(--mainfont);
     background-color: var(--foregroundcolour);
+
+    max-width: 100vw;
 }
 
 a {
@@ -44,8 +46,10 @@ ul {
     list-style: none;
 }
 
-section.homepage {
-    padding: 4em;
+.homepage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
     h2 {
         font-size: 4em;
@@ -54,14 +58,19 @@ section.homepage {
 }
 
 @media (max-width: 500px) {
-    h2 {
-        font-size: 3em;
+
+    .homepage {
+        h2 {
+            font-size: 3em;
+        }
     }
 }
 
 @media (max-width: 400px) {
-    h2 {
-        font-size: 2.5em;
+    .homepage {
+        h2 {
+            font-size: 2.5em;
+        }
     }
 }
 

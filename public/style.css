@@ -47,6 +47,10 @@ ul {
     list-style: none;
 }
 
+h1, h2, h3, h4 {
+    color: var(--backgroundcolour);
+}
+
 .homepage {
     display: flex;
     justify-content: center;
@@ -222,20 +226,28 @@ header {
 
 .related-content {
 
+    h4 {
+        font-size: 2em;
+        padding: 0.5em 0 0 0.5em;
+    }
+
     ul {
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 1em;
         padding: 1em;
 
-        overflow-x: scroll;
-
         li {
-            min-width: 33vw;
+            width: 15em;
+
+            background-color: white;
+
+            flex-wrap: wrap;
 
             img {
-                width: 30vw;
-                height: 7.5em;
+                width: 15em;
+                height: 15em;
                 object-fit: cover;
             }
 
@@ -273,7 +285,7 @@ ul.card-list {
 }
 
 li.card {
-    width: 90vw;
+    width: 40vw;
     background-color: white;
 
     h4 {
@@ -286,12 +298,23 @@ li.card {
 
     img {
         object-fit: cover;
-        height: 40vh;
-        width: 90vw;
+        height: 30vh;
+        width: 40vw;
     }
     
     a {
         margin: 0;
+    }
+}
+
+@media (max-width: 570px) {
+    li.card {
+        width: 90vw;
+
+        img {
+            height: 50vh;
+            width: 90vw;
+        }
     }
 }
 
@@ -378,15 +401,22 @@ ul.card-carousel {
 
     .related-content {
 
+        h4 {
+            font-size: 2.5em;
+            padding: 0.5em 0 0 0.5em;
+        }
+
         ul {
             gap: 5em;
 
+            justify-content: start;
+
             li {
-                min-width: 40vw;
+                min-width: 15em;
 
                 img {
-                    width: 40vw;
-                    height: 60vh;
+                    width: 15em;
+                    height: 15em;
                 }
             }
         }

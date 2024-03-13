@@ -2,6 +2,7 @@
 
 # Titel
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
+Dit project is het maken van een website voor de Hallen, waarin aanbod en vraag te vinden zijn
 
 ## Inhoudsopgave
 
@@ -16,6 +17,8 @@
 <!-- In de Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
+
+Ik heb door middel van node, express en ejs een website gebouwd, die door een database dynamische informatie heeft over aangeboden en gevraagden initiatieven of diensten
 
 ## Gebruik
 <!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->

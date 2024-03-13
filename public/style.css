@@ -30,6 +30,10 @@ body {
     overflow-x: hidden;
 }
 
+main {
+    padding-top: 4em;
+}
+
 a {
     all: unset
 }
@@ -53,11 +57,11 @@ h1, h2, h3, h4 {
 
 .homepage {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
     transform: 
     translateX(1em)
-    translateY(1em);
+    translateY(10em);
     height: 100vh;
 
     h2 {
@@ -95,6 +99,7 @@ header {
     align-items: center;
     justify-content: center;
     width: 100vw;
+    position: fixed;
 
     h1 {
         color: var(--backgroundcolour);
@@ -240,6 +245,7 @@ header {
 
         li {
             width: 15em;
+            height: fit-content;
 
             background-color: white;
 
@@ -251,8 +257,17 @@ header {
                 object-fit: cover;
             }
 
-            p {
+            p:nth-child(1) {
+                min-height: 4em;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            p:nth-child(3) {
                 text-decoration: underline;
+                height: fit-content;
             }
         }
     }
@@ -274,7 +289,7 @@ h3 {
     padding: 1em;
 }
 
-ul.card-list {
+.card-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -284,7 +299,7 @@ ul.card-list {
     gap: 1em;
 }
 
-li.card {
+.card {
     width: 40vw;
     background-color: white;
 
@@ -409,7 +424,7 @@ ul.card-carousel {
         ul {
             gap: 5em;
 
-            justify-content: start;
+            justify-content: center;
 
             li {
                 min-width: 15em;

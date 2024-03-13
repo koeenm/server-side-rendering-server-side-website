@@ -14,6 +14,7 @@ const app = express()
 app.set('view engine', 'ejs')
 
 const apiUrl = 'https://fdnd-agency.directus.app/items/dh_services'
+const relatedUrl = await fetchJson(apiUrl)
 
 // Stel de map met ejs templates in
 app.set('views', './views')
@@ -32,18 +33,27 @@ app.get('/', function(request, response) {
 app.get('/detail/:id', function(request, response) {
   fetchJson(apiUrl + '/' + request.params.id).then((initiatiefDetail) => {
     response.render('detail', {
-      initiatief: initiatiefDetail.data
+      initiatief: initiatiefDetail.data,
+      relatedContent: relatedUrl.data
     })
     console.log(initiatiefDetail)
   })
 })
+
+// app.get('/detail/:id', function(request,response) {
+//   fetchJson(apiUrl).then((apiData) => {
+//     response.render('detail', {
+//       detail: apiData.data
+//     })
+//   })
+// })
 
 app.get('/vraag', function (request, response) {
  
   // Hier haal je de url op en maak je er een
   // Json file van ipv een link. Waarna
   // het wordt vernoemd naar apiData
-  fetchJson(apiUrl).then((apiData) => {
+  fetchJson(apiUrl + '?filter={%22type%22:%22vraag%22}').then((apiData) => {
 
       // Deze info wordt daarna
       // meegegeven aan de toegewezen EJS
@@ -57,7 +67,7 @@ app.get('/vraag', function (request, response) {
   })
 
 app.get('/aanbod', function (request, response) {
-  fetchJson(apiUrl).then((apiData) => {
+  fetchJson('https://fdnd-agency.directus.app/items/dh_services?filter={%22type%22:%22aanbod%22}').then((apiData) => {
     response.render('aanbod', {
       initiatiefAanbod: apiData.data
     })

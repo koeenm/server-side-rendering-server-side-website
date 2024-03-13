@@ -41,30 +41,25 @@
     </article>
 </section>
 
-<!-- hier gaat een forEach loop moeten komen (denk ik) -->
 <section class="related-content">
     <h4>Gerelateerde content</h4>
     <ul>
-        <a href="/"><li><%= initiatief.title %>
-            <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
-            <p>Meer informatie</p>
-        </li></a>
-
-        <a href="/"><li><%= initiatief.title %>
-            <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
-            <p>Meer informatie</p>
-        </li></a>
-
-        <a href="/"><li><%= initiatief.title %>
-            <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
-            <p>Meer informatie</p>
-        </li></a>
-
-        <a href="/"><li><%= initiatief.title %>
-            <img src="https://fdnd-agency.directus.app/assets/<%= initiatief.image %>">
-            <p>Meer informatie</p>
-        </li></a>
+        <% relatedContent.forEach(related => {
+            { %>
+            <li>
+                <a href="/detail/<%=related.id%>">
+                <p><%=related.title%></p>
+                <% if (related.image) { %>
+                    <img src="https://fdnd-agency.directus.app/assets/<%= related.image %>" alt="<%- related.title %>">
+                    <!-- onerror; https://github.com/users/SamaraFellaDina/projects/7/views/2?pane=issue&itemId=53408192 -->
+                    <p>Meer informatie</p>          
+                </a> 
+            </li>
+           <% } %>     
+        <% }
+        }) %>
     </ul>
 </section>
+
 
 <%- include('./partials/foot.ejs') -%>

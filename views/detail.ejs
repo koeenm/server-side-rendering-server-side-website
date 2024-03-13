@@ -14,8 +14,7 @@
         <% } %>
         
         <% if (initiatief.neighbourhood) { %>
-            <p>Buurt: <%= initiatief.neighbourhood %></p>
-        <% } %>
+            <p>Buurt: <%= initiatief.neighbourhood.replace(/_/g, " ").split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %></p>        <% } %>
 
         <% if (initiatief.time) { %>
             <p>Tijd: <%= initiatief.time %></p>

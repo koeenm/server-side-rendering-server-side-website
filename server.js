@@ -40,14 +40,6 @@ app.get('/detail/:id', function(request, response) {
   })
 })
 
-// app.get('/detail/:id', function(request,response) {
-//   fetchJson(apiUrl).then((apiData) => {
-//     response.render('detail', {
-//       detail: apiData.data
-//     })
-//   })
-// })
-
 app.get('/vraag', function (request, response) {
  
   // Hier haal je de url op en maak je er een
